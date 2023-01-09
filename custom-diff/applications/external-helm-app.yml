@@ -21,4 +21,13 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true  
-   
+  
+ignoreDifferences:
+- group: Deployment
+  kind: Deployment
+  jsonPointers:
+  - /spec/replica
+- group: Secter
+  kind: Secret
+  jsonPointers:
+  - /data/my-password
